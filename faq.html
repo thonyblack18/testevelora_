@@ -1,0 +1,576 @@
+<!-- ============================================
+     ARQUIVO: faq.html
+     PROJETO: Velora - Página de FAQ por Categoria
+     ============================================ -->
+
+     <!DOCTYPE html>
+     <html lang="pt-BR">
+     <head>
+         <meta charset="UTF-8">
+         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <title>Central de Ajuda - Velora</title>
+         <link rel="stylesheet" href="faq-styles.css">
+     </head>
+     <body>
+         <!-- Decorações de fundo -->
+         <div class="background-decoration"></div>
+         <div class="circle-decoration"></div>
+         
+         <div class="container">
+             <!-- Header com logo -->
+             <header class="header">
+                 <!-- ============================================
+                      ESPAÇO PARA LOGO VELORA
+                      ============================================
+                      
+                      OPÇÃO 1 - USAR IMAGEM:
+                      Descomente a linha abaixo e adicione o caminho da sua logo
+                 -->
+                 <!-- <img src="assets/images/logo-velora.png" alt="Velora Logo" class="logo-image"> -->
+                 
+                 <!-- OPÇÃO 2 - USAR TEXTO ESTILIZADO (atual): -->
+                 <div class="logo-container">
+                     <h1 class="logo-text">VELORA</h1>
+                 </div>
+                 
+                 <button class="back-button" onclick="window.history.back()">
+                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                         <path d="M19 12H5M12 19l-7-7 7-7"/>
+                     </svg>
+                     Voltar
+                 </button>
+             </header>
+     
+             <!-- Seletor de Categoria -->
+             <div class="category-selector">
+                 <h2 class="page-title">Central de Ajuda</h2>
+                 <div class="tabs">
+                     <button class="tab active" data-category="conta">Conta e Segurança</button>
+                     <button class="tab" data-category="desenvolvedores">Para Desenvolvedores</button>
+                     <button class="tab" data-category="apoio">Apoio e Doações</button>
+                     <button class="tab" data-category="catalogo">Catálogo de Jogos</button>
+                     <button class="tab" data-category="comunidade">Comunidade</button>
+                     <button class="tab" data-category="problemas">Problemas Técnicos</button>
+                 </div>
+             </div>
+     
+             <!-- Barra de pesquisa -->
+             <div class="search-container">
+                 <input type="text" class="search-box" placeholder="Pesquisar na categoria..." id="faqSearch">
+                 <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                     <circle cx="11" cy="11" r="8"></circle>
+                     <path d="m21 21-4.35-4.35"></path>
+                 </svg>
+             </div>
+     
+             <!-- Conteúdo das FAQs -->
+             <div class="faq-content">
+                 <!-- CATEGORIA: Conta e Segurança -->
+                 <div class="faq-section active" data-category="conta">
+                     <div class="faq-item">
+                         <div class="faq-question">
+                             <h3>Como criar uma conta no Velora?</h3>
+                             <span class="toggle-icon">+</span>
+                         </div>
+                         <div class="faq-answer">
+                             <p>Para criar sua conta no Velora, siga os passos:</p>
+                             <ol>
+                                 <li>Clique em "Cadastrar" no canto superior direito</li>
+                                 <li>Escolha o tipo de conta: <strong>Jogador</strong> ou <strong>Desenvolvedor</strong></li>
+                                 <li>Preencha seus dados: nome, e-mail e senha segura</li>
+                                 <li>Confirme seu e-mail através do link enviado</li>
+                                 <li>Complete seu perfil com informações adicionais</li>
+                             </ol>
+                             <p class="tip"><strong>Dica:</strong> Desenvolvedores precisam passar por um processo de verificação para publicar jogos.</p>
+                         </div>
+                     </div>
+     
+                     <div class="faq-item">
+                         <div class="faq-question">
+                             <h3>Esqueci minha senha, como recuperar?</h3>
+                             <span class="toggle-icon">+</span>
+                         </div>
+                         <div class="faq-answer">
+                             <p>Para recuperar sua senha:</p>
+                             <ol>
+                                 <li>Na página de login, clique em "Esqueci minha senha"</li>
+                                 <li>Digite o e-mail cadastrado na plataforma</li>
+                                 <li>Verifique sua caixa de entrada (e spam) para o e-mail de recuperação</li>
+                                 <li>Clique no link recebido (válido por 24 horas)</li>
+                                 <li>Crie uma nova senha forte com pelo menos 8 caracteres</li>
+                             </ol>
+                             <p class="warning"><strong>Atenção:</strong> Por segurança, você será desconectado de todos os dispositivos após alterar a senha.</p>
+                         </div>
+                     </div>
+     
+                     <div class="faq-item">
+                         <div class="faq-question">
+                             <h3>Como ativar a autenticação em dois fatores?</h3>
+                             <span class="toggle-icon">+</span>
+                         </div>
+                         <div class="faq-answer">
+                             <p>A autenticação em dois fatores (2FA) adiciona uma camada extra de segurança:</p>
+                             <ol>
+                                 <li>Acesse <strong>Configurações</strong> → <strong>Segurança</strong></li>
+                                 <li>Clique em "Ativar Autenticação em Dois Fatores"</li>
+                                 <li>Escolha o método: SMS ou aplicativo autenticador (Google Authenticator, Authy)</li>
+                                 <li>Siga as instruções para vincular seu dispositivo</li>
+                                 <li>Guarde os códigos de backup em local seguro</li>
+                             </ol>
+                             <p class="tip"><strong>Recomendação:</strong> Aplicativos autenticadores são mais seguros que SMS.</p>
+                         </div>
+                     </div>
+     
+                     <div class="faq-item">
+                         <div class="faq-question">
+                             <h3>Como excluir minha conta?</h3>
+                             <span class="toggle-icon">+</span>
+                         </div>
+                         <div class="faq-answer">
+                             <p>Para excluir permanentemente sua conta:</p>
+                             <ol>
+                                 <li>Acesse <strong>Configurações</strong> → <strong>Conta</strong></li>
+                                 <li>Role até o final da página</li>
+                                 <li>Clique em "Excluir Conta"</li>
+                                 <li>Leia atentamente as consequências da exclusão</li>
+                                 <li>Digite sua senha para confirmar</li>
+                                 <li>Clique em "Confirmar Exclusão"</li>
+                             </ol>
+                             <p class="warning"><strong>Importante:</strong> A exclusão é permanente e irreversível. Todos os seus dados, incluindo avaliações, comentários e histórico serão perdidos após 30 dias.</p>
+                         </div>
+                     </div>
+                 </div>
+     
+                 <!-- CATEGORIA: Para Desenvolvedores -->
+                 <div class="faq-section" data-category="desenvolvedores">
+                     <div class="faq-item">
+                         <div class="faq-question">
+                             <h3>Como cadastrar meu jogo na plataforma?</h3>
+                             <span class="toggle-icon">+</span>
+                         </div>
+                         <div class="faq-answer">
+                             <p>Para publicar seu jogo no Velora:</p>
+                             <ol>
+                                 <li>Certifique-se de ter uma conta de <strong>Desenvolvedor Verificado</strong></li>
+                                 <li>Acesse o <strong>Painel do Desenvolvedor</strong></li>
+                                 <li>Clique em "Novo Jogo" → "Adicionar Projeto"</li>
+                                 <li>Preencha as informações básicas: título, gênero, plataformas</li>
+                                 <li>Faça upload das imagens (capa, capturas de tela, trailer)</li>
+                                 <li>Adicione descrição detalhada e requisitos técnicos</li>
+                                 <li>Escolha tags relevantes para facilitar a descoberta</li>
+                                 <li>Envie para análise da curadoria</li>
+                             </ol>
+                             <p class="tip"><strong>Dica:</strong> Jogos com trailers e capturas de tela de qualidade recebem 3x mais visualizações!</p>
+                         </div>
+                     </div>
+     
+                     <div class="faq-item">
+                         <div class="faq-question">
+                             <h3>Quanto tempo demora a verificação do meu perfil?</h3>
+                             <span class="toggle-icon">+</span>
+                         </div>
+                         <div class="faq-answer">
+                             <p>O processo de verificação geralmente leva de 2 a 5 dias úteis. Durante esse período, nossa equipe:</p>
+                             <ul>
+                                 <li>Analisa a autenticidade das informações fornecidas</li>
+                                 <li>Verifica links para portfólios e trabalhos anteriores</li>
+                                 <li>Confirma a propriedade dos projetos listados</li>
+                                 <li>Valida documentação do estúdio (se aplicável)</li>
+                             </ul>
+                             <p class="info"><strong>Status da verificação:</strong> Você pode acompanhar em tempo real no Painel do Desenvolvedor.</p>
+                         </div>
+                     </div>
+     
+                     <div class="faq-item">
+                         <div class="faq-question">
+                             <h3>Como funciona o sistema de atualizações de jogos?</h3>
+                             <span class="toggle-icon">+</span>
+                         </div>
+                         <div class="faq-answer">
+                             <p>Manter seu jogo atualizado é fundamental:</p>
+                             <ol>
+                                 <li>Acesse a página do seu jogo no Painel</li>
+                                 <li>Clique em "Editar Informações"</li>
+                                 <li>Atualize descrições, imagens ou informações técnicas</li>
+                                 <li>Use a seção "Devlog" para anunciar novidades e patches</li>
+                                 <li>Seguidores do jogo receberão notificações automáticas</li>
+                             </ol>
+                             <p class="tip"><strong>Boas práticas:</strong> Mantenha um roadmap público e comunique-se regularmente com sua comunidade através dos devlogs.</p>
+                         </div>
+                     </div>
+     
+                     <div class="faq-item">
+                         <div class="faq-question">
+                             <h3>Como visualizar as estatísticas do meu jogo?</h3>
+                             <span class="toggle-icon">+</span>
+                         </div>
+                         <div class="faq-answer">
+                             <p>O Painel do Desenvolvedor oferece analytics completos:</p>
+                             <ul>
+                                 <li><strong>Visualizações:</strong> Total de acessos à página do jogo</li>
+                                 <li><strong>Engajamento:</strong> Tempo médio na página, taxa de cliques</li>
+                                 <li><strong>Apoio financeiro:</strong> Total arrecadado, número de apoiadores</li>
+                                 <li><strong>Avaliações:</strong> Nota média, distribuição de estrelas</li>
+                                 <li><strong>Comentários:</strong> Feedback da comunidade</li>
+                                 <li><strong>Demografia:</strong> Origem dos visitantes, dispositivos</li>
+                             </ul>
+                             <p class="info"><strong>Recursos avançados:</strong> Exporte relatórios em PDF ou CSV para análises detalhadas.</p>
+                         </div>
+                     </div>
+                 </div>
+     
+                 <!-- CATEGORIA: Apoio e Doações -->
+                 <div class="faq-section" data-category="apoio">
+                     <div class="faq-item">
+                         <div class="faq-question">
+                             <h3>Como apoiar financeiramente um jogo?</h3>
+                             <span class="toggle-icon">+</span>
+                         </div>
+                         <div class="faq-answer">
+                             <p>Apoiar jogos indie brasileiros é simples e seguro:</p>
+                             <ol>
+                                 <li>Navegue até a página do jogo que deseja apoiar</li>
+                                 <li>Clique no botão "Apoiar este Projeto"</li>
+                                 <li>Escolha o valor da contribuição (mínimo R$ 5,00)</li>
+                                 <li>Selecione o método de pagamento: PIX, cartão ou boleto</li>
+                                 <li>Confirme os dados e finalize a doação</li>
+                             </ol>
+                             <p class="tip"><strong>Benefícios:</strong> Apoiadores recebem um badge exclusivo no perfil e acesso a atualizações antecipadas!</p>
+                         </div>
+                     </div>
+     
+                     <div class="faq-item">
+                         <div class="faq-question">
+                             <h3>Quais métodos de pagamento são aceitos?</h3>
+                             <span class="toggle-icon">+</span>
+                         </div>
+                         <div class="faq-answer">
+                             <p>A Velora aceita diversos métodos de pagamento brasileiros:</p>
+                             <ul>
+                                 <li><strong>PIX:</strong> Instantâneo, sem taxas para o apoiador</li>
+                                 <li><strong>Cartão de crédito:</strong> Visa, Mastercard, Elo, Amex (parcele em até 3x)</li>
+                                 <li><strong>Cartão de débito:</strong> Principais bandeiras</li>
+                                 <li><strong>Boleto bancário:</strong> Confirmação em até 3 dias úteis</li>
+                             </ul>
+                             <p class="info"><strong>Segurança:</strong> Todas as transações são processadas por gateways certificados PCI-DSS.</p>
+                         </div>
+                     </div>
+     
+                     <div class="faq-item">
+                         <div class="faq-question">
+                             <h3>Posso cancelar ou pedir reembolso de uma doação?</h3>
+                             <span class="toggle-icon">+</span>
+                         </div>
+                         <div class="faq-answer">
+                             <p>Sobre reembolsos de apoio financeiro:</p>
+                             <p>As contribuições no Velora são consideradas <strong>doações voluntárias</strong> para apoiar o desenvolvimento de jogos indie. Por natureza, doações não são reembolsáveis.</p>
+                             <p><strong>Exceções:</strong></p>
+                             <ul>
+                                 <li>Erro técnico comprovado na plataforma</li>
+                                 <li>Cobrança duplicada</li>
+                                 <li>Fraude ou uso não autorizado do cartão</li>
+                             </ul>
+                             <p class="info">Nestes casos, entre em contato com suporte@velora.com.br em até 7 dias com comprovante da transação.</p>
+                         </div>
+                     </div>
+     
+                     <div class="faq-item">
+                         <div class="faq-question">
+                             <h3>Como receber o dinheiro das doações (para desenvolvedores)?</h3>
+                             <span class="toggle-icon">+</span>
+                         </div>
+                         <div class="faq-answer">
+                             <p>Para desenvolvedores receberem as contribuições:</p>
+                             <ol>
+                                 <li>Configure seus dados bancários no Painel do Desenvolvedor</li>
+                                 <li>Informe CPF ou CNPJ para emissão de nota fiscal</li>
+                                 <li>As transferências são realizadas quinzenalmente</li>
+                                 <li>Valor mínimo para saque: R$ 50,00</li>
+                                 <li>Taxa da plataforma: 8% + taxas do gateway de pagamento</li>
+                             </ol>
+                             <p class="warning"><strong>Documentação:</strong> É necessário estar regularizado para receber valores acima de R$ 1.000,00/mês.</p>
+                         </div>
+                     </div>
+                 </div>
+     
+                 <!-- CATEGORIA: Catálogo de Jogos -->
+                 <div class="faq-section" data-category="catalogo">
+                     <div class="faq-item">
+                         <div class="faq-question">
+                             <h3>Como encontrar jogos do meu interesse?</h3>
+                             <span class="toggle-icon">+</span>
+                         </div>
+                         <div class="faq-answer">
+                             <p>A Velora oferece diversas formas de descobrir novos jogos:</p>
+                             <ul>
+                                 <li><strong>Busca por gênero:</strong> Aventura, RPG, Puzzle, Plataforma, etc.</li>
+                                 <li><strong>Filtros avançados:</strong> Plataforma, estágio de desenvolvimento, ano</li>
+                                 <li><strong>Tags personalizadas:</strong> Pixel art, narrativo, multiplayer, etc.</li>
+                                 <li><strong>Ordenação:</strong> Mais recentes, mais apoiados, melhor avaliados</li>
+                                 <li><strong>Curadoria semanal:</strong> Jogos selecionados pela equipe</li>
+                                 <li><strong>Recomendações:</strong> Baseadas no seu histórico de navegação</li>
+                             </ul>
+                             <p class="tip"><strong>Dica:</strong> Siga desenvolvedores favoritos para receber notificações de novos lançamentos!</p>
+                         </div>
+                     </div>
+     
+                     <div class="faq-item">
+                         <div class="faq-question">
+                             <h3>O que significam os estágios de desenvolvimento?</h3>
+                             <span class="toggle-icon">+</span>
+                         </div>
+                         <div class="faq-answer">
+                             <p>Cada jogo no Velora está classificado por seu estágio:</p>
+                             <ul>
+                                 <li><strong>Conceito:</strong> Ideia inicial, documentação e primeiros protótipos</li>
+                                 <li><strong>Pré-produção:</strong> Planejamento, GDD, arte conceitual</li>
+                                 <li><strong>Em desenvolvimento:</strong> Produção ativa do jogo</li>
+                                 <li><strong>Alpha:</strong> Versão jogável com mecânicas principais implementadas</li>
+                                 <li><strong>Beta:</strong> Jogo completo em fase de testes e polimento</li>
+                                 <li><strong>Lançado:</strong> Versão final disponível publicamente</li>
+                                 <li><strong>Pós-lançamento:</strong> Recebendo atualizações e DLCs</li>
+                             </ul>
+                             <p class="info"><strong>Transparência:</strong> Desenvolvedores atualizam o estágio conforme o projeto evolui.</p>
+                         </div>
+                     </div>
+     
+                     <div class="faq-item">
+                         <div class="faq-question">
+                             <h3>Como funcionam as avaliações e reviews?</h3>
+                             <span class="toggle-icon">+</span>
+                         </div>
+                         <div class="faq-answer">
+                             <p>Sistema de avaliação da Velora:</p>
+                             <ol>
+                                 <li>Qualquer usuário cadastrado pode avaliar jogos (1 a 5 estrelas)</li>
+                                 <li>Usuários verificados podem escrever reviews detalhadas</li>
+                                 <li>Reviews passam por moderação automática anti-spam</li>
+                                 <li>Avaliações podem ser marcadas como "úteis" pela comunidade</li>
+                                 <li>Nota final é calculada pela média ponderada das avaliações</li>
+                             </ol>
+                             <p class="tip"><strong>Reviews construtivas:</strong> Foque em mecânicas, arte, narrativa e experiência geral. Evite spoilers!</p>
+                         </div>
+                     </div>
+     
+                     <div class="faq-item">
+                         <div class="faq-question">
+                             <h3>Posso adicionar jogos à minha lista de favoritos?</h3>
+                             <span class="toggle-icon">+</span>
+                         </div>
+                         <div class="faq-answer">
+                             <p>Sim! Organize seus jogos favoritos facilmente:</p>
+                             <ul>
+                                 <li>Clique no ícone de coração na página do jogo</li>
+                                 <li>Acesse sua lista em "Meu Perfil" → "Jogos Favoritos"</li>
+                                 <li>Crie listas personalizadas: "Quero jogar", "Estou acompanhando", etc.</li>
+                                 <li>Receba notificações de atualizações dos jogos favoritados</li>
+                                 <li>Compartilhe suas listas com amigos</li>
+                             </ul>
+                             <p class="info">Suas listas podem ser públicas ou privadas, você escolhe!</p>
+                         </div>
+                     </div>
+                 </div>
+     
+                 <!-- CATEGORIA: Comunidade -->
+                 <div class="faq-section" data-category="comunidade">
+                     <div class="faq-item">
+                         <div class="faq-question">
+                             <h3>Como interagir com desenvolvedores e outros jogadores?</h3>
+                             <span class="toggle-icon">+</span>
+                         </div>
+                         <div class="faq-answer">
+                             <p>A Velora promove conexão entre criadores e comunidade:</p>
+                             <ul>
+                                 <li><strong>Comentários:</strong> Deixe feedback nas páginas dos jogos</li>
+                                 <li><strong>Devlogs:</strong> Acompanhe atualizações diretas dos desenvolvedores</li>
+                                 <li><strong>Fórum da comunidade:</strong> Discussões gerais sobre games indie</li>
+                                 <li><strong>Eventos:</strong> Participe de gamejams e showcases online</li>
+                                 <li><strong>Mensagens diretas:</strong> Converse com desenvolvedores verificados</li>
+                             </ul>
+                             <p class="tip"><strong>Respeito:</strong> Mantenha sempre uma comunicação construtiva e respeitosa.</p>
+                         </div>
+                     </div>
+     
+                     <div class="faq-item">
+                         <div class="faq-question">
+                             <h3>Quais são as regras da comunidade?</h3>
+                             <span class="toggle-icon">+</span>
+                         </div>
+                         <div class="faq-answer">
+                             <p>Para manter um ambiente saudável, siga estas diretrizes:</p>
+                             <ul>
+                                 <li>🚫 Não toleramos discurso de ódio, assédio ou discriminação</li>
+                                 <li>🚫 Proibido spam, autopromoção excessiva ou conteúdo enganoso</li>
+                                 <li>🚫 Não compartilhe conteúdo pirata ou ilegal</li>
+                                 <li>🚫 Respeite a propriedade intelectual dos criadores</li>
+                                 <li>✅ Seja construtivo: críticas são bem-vindas, ofensas não</li>
+                                 <li>✅ Ajude outros membros da comunidade</li>
+                                 <li>✅ Reporte comportamentos inadequados</li>
+                             </ul>
+                             <p class="warning"><strong>Violações:</strong> Podem resultar em advertência, suspensão ou banimento permanente.</p>
+                         </div>
+                     </div>
+     
+                     <div class="faq-item">
+                         <div class="faq-question">
+                             <h3>Como reportar conteúdo inadequado?</h3>
+                             <span class="toggle-icon">+</span>
+                         </div>
+                         <div class="faq-answer">
+                             <p>Se encontrar algo que viole nossas políticas:</p>
+                             <ol>
+                                 <li>Clique no ícone de "reportar" (⚠️) ao lado do conteúdo</li>
+                                 <li>Selecione o motivo: spam, assédio, conteúdo impróprio, etc.</li>
+                                 <li>Adicione detalhes adicionais (opcional mas recomendado)</li>
+                                 <li>Envie o relatório</li>
+                                 <li>Nossa equipe analisará em até 24 horas</li>
+                             </ol>
+                             <p class="info"><strong>Privacidade:</strong> Reportes são anônimos e confidenciais.</p>
+                         </div>
+                     </div>
+     
+                     <div class="faq-item">
+                         <div class="faq-question">
+                             <h3>Como ganhar badges e conquistas na plataforma?</h3>
+                             <span class="toggle-icon">+</span>
+                         </div>
+                         <div class="faq-answer">
+                             <p>Ganhe reconhecimento participando ativamente:</p>
+                             <ul>
+                                 <li><strong>🌟 Apoiador:</strong> Doe para qualquer jogo</li>
+                                 <li><strong>💎 Mecenas:</strong> Doe para 5+ jogos diferentes</li>
+                                 <li><strong>✍️ Crítico:</strong> Escreva 10+ reviews detalhadas</li>
+                                 <li><strong>🎯 Early Adopter:</strong> Apoie jogos em estágio inicial</li>
+                                 <li><strong>👥 Construtor de Comunidade:</strong> 100+ comentários úteis</li>
+                                 <li><strong>🏆 Curador:</strong> Suas listas têm 50+ seguidores</li>
+                             </ul>
+                             <p class="tip">Badges aparecem no seu perfil e dão mais credibilidade às suas avaliações!</p>
+                         </div>
+                     </div>
+                 </div>
+     
+                 <!-- CATEGORIA: Problemas Técnicos -->
+                 <div class="faq-section" data-category="problemas">
+                     <div class="faq-item">
+                         <div class="faq-question">
+                             <h3>O site está lento ou não carrega corretamente</h3>
+                             <span class="toggle-icon">+</span>
+                         </div>
+                         <div class="faq-answer">
+                             <p>Se estiver enfrentando problemas de performance:</p>
+                             <ol>
+                                 <li><strong>Limpe o cache do navegador:</strong>
+                                     <ul>
+                                         <li>Chrome: Ctrl+Shift+Del → Limpar dados</li>
+                                         <li>Firefox: Ctrl+Shift+Del → Limpar agora</li>
+                                         <li>Safari: Cmd+Option+E</li>
+                                     </ul>
+                                 </li>
+                                 <li>Desative extensões temporariamente para testar</li>
+                                 <li>Tente em modo anônimo/privado</li>
+                                 <li>Atualize seu navegador para a versão mais recente</li>
+                                 <li>Teste em outro navegador para comparar</li>
+                             </ol>
+                             <p class="info"><strong>Navegadores recomendados:</strong> Chrome 90+, Firefox 88+, Safari 14+, Edge 90+</p>
+                         </div>
+                     </div>
+     
+                     <div class="faq-item">
+                         <div class="faq-question">
+                             <h3>Não consigo fazer login na minha conta</h3>
+                             <span class="toggle-icon">+</span>
+                         </div>
+                         <div class="faq-answer">
+                             <p>Problemas comuns de login e soluções:</p>
+                             <ul>
+                                 <li><strong>Senha incorreta:</strong> Use "Esqueci minha senha" para redefinir</li>
+                                 <li><strong>E-mail não reconhecido:</strong> Verifique se usou o e-mail correto no cadastro</li>
+                                 <li><strong>Conta não verificada:</strong> Cheque sua caixa de entrada/spam pelo e-mail de confirmação</li>
+                                 <li><strong>Conta suspensa:</strong> Você receberá notificação por e-mail sobre suspensões</li>
+                                 <li><strong>Problema com 2FA:</strong> Use código de backup ou entre em contato com suporte</li>
+                             </ul>
+                             <p class="tip">Ainda com problemas? Envie e-mail para suporte@velora.com.br com seu nome de usuário.</p>
+                         </div>
+                     </div>
+     
+                     <div class="faq-item">
+                         <div class="faq-question">
+                             <h3>Upload de imagens falha ou retorna erro</h3>
+                             <span class="toggle-icon">+</span>
+                         </div>
+                         <div class="faq-answer">
+                             <p>Requisitos para upload de imagens:</p>
+                             <ul>
+                                 <li><strong>Formatos aceitos:</strong> JPG, PNG, GIF (não animado)</li>
+                                 <li><strong>Tamanho máximo:</strong> 5MB por imagem</li>
+                                 <li><strong>Dimensões recomendadas:</strong>
+                                     <ul>
+                                         <li>Capa do jogo: 1920x1080px</li>
+                                         <li>Capturas de tela: mín. 1280x720px</li>
+                                         <li>Avatar: 400x400px (quadrado)</li>
+                                     </ul>
+                                 </li>
+                             </ul>
+                             <p class="warning"><strong>Dica:</strong> Use ferramentas como TinyPNG para comprimir imagens sem perder qualidade.</p>
+                         </div>
+                     </div>
+     
+                     <div class="faq-item">
+                         <div class="faq-question">
+                             <h3>Problemas com pagamento ou doação não processada</h3>
+                             <span class="toggle-icon">+</span>
+                         </div>
+                         <div class="faq-answer">
+                             <p>Se sua doação não foi processada:</p>
+                             <ol>
+                                 <li>Verifique se o valor foi debitado da sua conta/cartão</li>
+                                 <li>Aguarde até 48h para processamento (boleto) ou 5min (PIX/cartão)</li>
+                                 <li>Confira em "Meu Perfil" → "Histórico de Apoios"</li>
+                                 <li>Verifique e-mail de confirmação (incluindo spam)</li>
+                             </ol>
+                             <p><strong>Se o problema persistir:</strong></p>
+                             <ul>
+                                 <li>Entre em contato: pagamentos@velora.com.br</li>
+                                 <li>Informe: nome completo, e-mail, data/hora da tentativa</li>
+                                 <li>Anexe: comprovante ou print do erro</li>
+                             </ul>
+                             <p class="info">Nossa equipe responde em até 2 dias úteis.</p>
+                         </div>
+                     </div>
+     
+                     <div class="faq-item">
+                         <div class="faq-question">
+                             <h3>Não recebi notificações de atualizações</h3>
+                             <span class="toggle-icon">+</span>
+                         </div>
+                         <div class="faq-answer">
+                             <p>Para garantir que recebe notificações:</p>
+                             <ol>
+                                 <li>Acesse <strong>Configurações</strong> → <strong>Notificações</strong></li>
+                                 <li>Verifique se as opções desejadas estão ativadas:
+                                     <ul>
+                                         <li>Atualizações de jogos favoritos ✓</li>
+                                         <li>Novos lançamentos de desenvolvedores seguidos ✓</li>
+                                         <li>Respostas aos meus comentários ✓</li>
+                                     </ul>
+                                 </li>
+                                 <li>Confira se nossos e-mails não estão na pasta de spam</li>
+                                 <li>Adicione noreply@velora.com.br aos contatos confiáveis</li>
+                             </ol>
+                             <p class="tip">Você também pode ativar notificações push no navegador!</p>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+     
+             <!-- Ainda precisa de ajuda? -->
+             <div class="help-footer">
+                 <h3>Não encontrou o que procura?</h3>
+                 <p>Entre em contato diretamente com nossa equipe</p>
+                 <button class="contact-button">Falar com Suporte</button>
+             </div>
+         </div>
+     
+         <script src="faq-script.js"></script>
+     </body>
+     </html>

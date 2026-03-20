@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Velora | Página Inicial</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="Catalogo.css">
+</head>
+<body>
+    <!-- Header/Menu -->
+    <header class="main-header">
+        <div class="header-container">
+            <div class="header-left">
+                <!-- =================== LOGO DO HEADER =================== -->
+                <div class="logo">
+                    <img src="logo-velora.png" alt="Velora" class="logo-img" id="header-logo">
+                    <span class="logo-text">VELORA</span>
+                </div>
+                <!-- ====================================================== -->
+                
+                <nav class="main-nav">
+                    <a href="#" class="nav-item active">
+                        <i class="fas fa-home"></i>
+                        Início
+                    </a>
+                    <a href="#" class="nav-item">
+                        <i class="fas fa-gamepad"></i>
+                        Jogos
+                    </a>
+                    <a href="#" class="nav-item">
+                        <i class="fas fa-fire"></i>
+                        Em alta
+                    </a>
+                    <a href="#" class="nav-item">
+                        <i class="fas fa-crown"></i>
+                        Destaques
+                    </a>
+                    <a href="#" class="nav-item">
+                        <i class="fas fa-users"></i>
+                        Desenvolvedores
+                    </a>
+                </nav>
+            </div>
+            
+            <div class="header-right">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Buscar jogos...">
+                </div>
+                
+                <button class="icon-btn" title="Favoritos">
+                    <i class="fas fa-heart"></i>
+                </button>
+                
+                <button class="icon-btn" title="Notificações">
+                    <i class="fas fa-bell"></i>
+                    <span class="notification-badge">3</span>
+                </button>
+                
+                <div class="user-profile" id="userProfile">
+                    <img src="https://via.placeholder.com/40" alt="Usuário">
+                    <span class="user-name">Jogador</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                
+                <!-- Dropdown do usuário -->
+                <div class="user-dropdown" id="userDropdown">
+                    <div class="dropdown-item">
+                        <i class="fas fa-user"></i>
+                        <span>Meu Perfil</span>
+                    </div>
+                    <div class="dropdown-item">
+                        <i class="fas fa-heart"></i>
+                        <span>Meus Favoritos</span>
+                    </div>
+                    <a href="Configuracoes.html" class="dropdown-item">
+                    <i class="fas fa-cog"></i>
+                    <span>Configurações</span>
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <div class="dropdown-item logout">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span>Sair</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Modal de Filtros -->
+        <div class="filter-modal" id="filterModal">
+            <div class="filter-modal-content">
+                <div class="filter-modal-header">
+                    <h3>Filtrar Jogos</h3>
+                    <button class="close-modal" id="closeModal">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                
+                <div class="filter-modal-body">
+                    <div class="filter-section">
+                        <h4>Gênero</h4>
+                        <div class="filter-options">
+                            <label class="filter-checkbox">
+                                <input type="checkbox" value="aventura">
+                                <span>Aventura</span>
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox" value="acao">
+                                <span>Ação</span>
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox" value="rpg">
+                                <span>RPG</span>
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox" value="puzzle">
+                                <span>Puzzle</span>
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox" value="plataforma">
+                                <span>Plataforma</span>
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox" value="terror">
+                                <span>Terror</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-section">
+                        <h4>Avaliação</h4>
+                        <div class="filter-options">
+                            <label class="filter-radio">
+                                <input type="radio" name="rating" value="all" checked>
+                                <span>Todas</span>
+                            </label>
+                            <label class="filter-radio">
+                                <input type="radio" name="rating" value="4.5">
+                                <span>4.5+ ⭐</span>
+                            </label>
+                            <label class="filter-radio">
+                                <input type="radio" name="rating" value="4.0">
+                                <span>4.0+ ⭐</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-section">
+                        <h4>Plataforma</h4>
+                        <div class="filter-options">
+                            <label class="filter-checkbox">
+                                <input type="checkbox" value="windows">
+                                <span>Windows</span>
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox" value="mac">
+                                <span>Mac</span>
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox" value="linux">
+                                <span>Linux</span>
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox" value="mobile">
+                                <span>Mobile</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="filter-modal-footer">
+                    <button class="btn-clear" id="clearFilters">Limpar Filtros</button>
+                    <button class="btn-apply" id="applyFilters">Aplicar</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-container">
+            <!-- Hero Section -->
+            <section class="hero-section">
+                <div class="hero-content">
+                    <h1 class="hero-title">Descubra jogos indies brasileiros</h1>
+                    <p class="hero-subtitle">Explore, apoie e jogue os melhores jogos independentes do Brasil</p>
+                </div>
+            </section>
+
+            <!-- Filtros -->
+            <section class="filters-section">
+                <div class="filters-left">
+                    <h2 class="section-title">Catálogo Completo</h2>
+                    <span class="games-count">30 jogos disponíveis</span>
+                </div>
+                
+                <div class="filters-right">
+                    <button class="filter-btn">
+                        <i class="fas fa-filter"></i>
+                        Filtrar
+                    </button>
+                    <select class="sort-select">
+                        <option>Mais recentes</option>
+                        <option>Mais populares</option>
+                        <option>A-Z</option>
+                        <option>Z-A</option>
+                    </select>
+                </div>
+            </section>
+
+            <!-- Grade de Jogos -->
+            <section class="games-grid">
+                <!-- =================== JOGO 1 =================== -->
+                <div class="game-card">
+                    <div class="game-image">
+                        <!-- COLOQUE A LOGO DO JOGO AQUI -->
+                        <img src="jogo1-logo.png" alt="Jogo 1" class="game-logo">
+                        <button class="favorite-btn">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                    <div class="game-info">
+                        <h3 class="game-title">Jogo 1</h3> <!-- NOME DO JOGO -->
+                        <div class="game-meta">
+                            <span class="game-genre">Aventura</span>
+                            <span class="game-rating">
+                                <i class="fas fa-star"></i> 4.8
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- =================== JOGO 2 =================== -->
+                <div class="game-card">
+                    <div class="game-image">
+                        <img src="jogo2-logo.png" alt="Jogo 2" class="game-logo">
+                        <button class="favorite-btn">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                    <div class="game-info">
+                        <h3 class="game-title">Jogo 2</h3>
+                        <div class="game-meta">
+                            <span class="game-genre">Plataforma</span>
+                            <span class="game-rating">
+                                <i class="fas fa-star"></i> 4.5
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- =================== JOGO 3 =================== -->
+                <div class="game-card">
+                    <div class="game-image">
+                        <img src="jogo3-logo.png" alt="Jogo 3" class="game-logo">
+                        <button class="favorite-btn">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                    <div class="game-info">
+                        <h3 class="game-title">Jogo 3</h3>
+                        <div class="game-meta">
+                            <span class="game-genre">RPG</span>
+                            <span class="game-rating">
+                                <i class="fas fa-star"></i> 4.9
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- =================== JOGO 4 =================== -->
+                <div class="game-card">
+                    <div class="game-image">
+                        <img src="jogo4-logo.png" alt="Jogo 4" class="game-logo">
+                        <button class="favorite-btn">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                    <div class="game-info">
+                        <h3 class="game-title">Jogo 4</h3>
+                        <div class="game-meta">
+                            <span class="game-genre">Puzzle</span>
+                            <span class="game-rating">
+                                <i class="fas fa-star"></i> 4.7
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- =================== JOGO 5 =================== -->
+                <div class="game-card">
+                    <div class="game-image">
+                        <img src="jogo5-logo.png" alt="Jogo 5" class="game-logo">
+                        <button class="favorite-btn">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                    <div class="game-info">
+                        <h3 class="game-title">Jogo 5</h3>
+                        <div class="game-meta">
+                            <span class="game-genre">Ação</span>
+                            <span class="game-rating">
+                                <i class="fas fa-star"></i> 4.6
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- =================== JOGOS 6-30 =================== -->
+                <!-- Repita a estrutura acima para os jogos 6 até 30 -->
+                <!-- Exemplo para Jogo 6: -->
+                <div class="game-card">
+                    <div class="game-image">
+                        <img src="jogo6-logo.png" alt="Jogo 6" class="game-logo">
+                        <button class="favorite-btn">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                    <div class="game-info">
+                        <h3 class="game-title">Jogo 6</h3>
+                        <div class="game-meta">
+                            <span class="game-genre">Terror</span>
+                            <span class="game-rating">
+                                <i class="fas fa-star"></i> 4.4
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="game-card">
+                    <div class="game-image">
+                        <img src="jogo7-logo.png" alt="Jogo 7" class="game-logo">
+                        <button class="favorite-btn"><i class="far fa-heart"></i></button>
+                    </div>
+                    <div class="game-info">
+                        <h3 class="game-title">Jogo 7</h3>
+                        <div class="game-meta">
+                            <span class="game-genre">Corrida</span>
+                            <span class="game-rating"><i class="fas fa-star"></i> 4.3</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="game-card">
+                    <div class="game-image">
+                        <img src="jogo8-logo.png" alt="Jogo 8" class="game-logo">
+                        <button class="favorite-btn"><i class="far fa-heart"></i></button>
+                    </div>
+                    <div class="game-info">
+                        <h3 class="game-title">Jogo 8</h3>
+                        <div class="game-meta">
+                            <span class="game-genre">Estratégia</span>
+                            <span class="game-rating"><i class="fas fa-star"></i> 4.8</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="game-card">
+                    <div class="game-image">
+                        <img src="jogo9-logo.png" alt="Jogo 9" class="game-logo">
+                        <button class="favorite-btn"><i class="far fa-heart"></i></button>
+                    </div>
+                    <div class="game-info">
+                        <h3 class="game-title">Jogo 9</h3>
+                        <div class="game-meta">
+                            <span class="game-genre">Simulação</span>
+                            <span class="game-rating"><i class="fas fa-star"></i> 4.5</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="game-card">
+                    <div class="game-image">
+                        <img src="jogo10-logo.png" alt="Jogo 10" class="game-logo">
+                        <button class="favorite-btn"><i class="far fa-heart"></i></button>
+                    </div>
+                    <div class="game-info">
+                        <h3 class="game-title">Jogo 10</h3>
+                        <div class="game-meta">
+                            <span class="game-genre">Luta</span>
+                            <span class="game-rating"><i class="fas fa-star"></i> 4.7</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Jogos 11-15 -->
+                <div class="game-card">
+                    <div class="game-image">
+                        <img src="jogo11-logo.png" alt="Jogo 11" class="game-logo">
+                        <button class="favorite-btn"><i class="far fa-heart"></i></button>
+                    </div>
+                    <div class="game-info">
+                        <h3 class="game-title">Jogo 11</h3>
+                        <div class="game-meta">
+                            <span class="game-genre">Aventura</span>
+                            <span class="game-rating"><i class="fas fa-star"></i> 4.6</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="game-card">
+                    <div class="game-image">
+                        <img src="jogo12-logo.png" alt="Jogo 12" class="game-logo">
+                        <button class="favorite-btn"><i class="far fa-heart"></i></button>
+                    </div>
+                    <div class="game-info">
+                        <h3 class="game-title">Jogo 12</h3>
+                        <div class="game-meta">
+                            <span class="game-genre">Indie</span>
+                            <span class="game-rating"><i class="fas fa-star"></i> 4.9</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="game-card">
+                    <div class="game-image">
+                        <img src="jogo13-logo.png" alt="Jogo 13" class="game-logo">
+                        <button class="favorite-btn"><i class="far fa-heart"></i></button>
+                    </div>
+                    <div class="game-info">
+                        <h3 class="game-title">Jogo 13</h3>
+                        <div class="game-meta">
+                            <span class="game-genre">Roguelike</span>
+                            <span class="game-rating"><i class="fas fa-star"></i> 4.4</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="game-card">
+                    <div class="game-image">
+                        <img src="jogo14-logo.png" alt="Jogo 14" class="game-logo">
+                        <button class="favorite-btn"><i class="far fa-heart"></i></button>
+                    </div>
+                    <div class="game-info">
+                        <h3 class="game-title">Jogo 14</h3>
+                        <div class="game-meta">
+                            <span class="game-genre">Metroidvania</span>
+                            <span class="game-rating"><i class="fas fa-star"></i> 4.8</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="game-card">
+                    <div class="game-image">
+                        <img src="jogo15-logo.png" alt="Jogo 15" class="game-logo">
+                        <button class="favorite-btn"><i class="far fa-heart"></i></button>
+                    </div>
+                    <div class="game-info">
+                        <h3 class="game-title">Jogo 15</h3>
+                        <div class="game-meta">
+                            <span class="game-genre">Tiro</span>
+                            <span class="game-rating"><i class="fas fa-star"></i> 4.5</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Jogos 16-20 -->
+                <div class="game-card">
+                    <div class="game-image">
+                        <img src="jogo16-logo.png" alt="Jogo 16" class="game-logo">
+                        <button class="favorite-btn"><i class="far fa-heart"></i></button>
+                    </div>
+                    <div class="game-info">
+                        <h3 class="game-title">Jogo 16</h3>
+                        <div class="game-meta">
+                            <span class="game-genre">Card Game</span>
+                            <span class="game-rating"><i class="fas fa-star"></i> 4.7</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="game-card">
+                    <div class="game-image">
+                        <img src="jogo17-logo.png" alt="Jogo 17" class="game-logo">
+                        <button class="favorite-btn"><i class="far fa-heart"></i></button>
+                    </div>
+                    <div class="game-info">
+                        <h3 class="game-title">Jogo 17</h3>
+                        <div class="game-meta">
+                            <span class="game-genre">Visual Novel</span>
+                            <span class="game-rating"><i class="fas fa-star"></i> 4.6</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="game-card">
+                    <div class="game-image">
+                        <img src="jogo18-logo.png" alt="Jogo 18" class="game-logo">
+                        <button class="favorite-btn"><i class="far fa-heart"></i></button>
+                    </div>
+                    <div class="game-info">
+                        <h3 class="game-title">Jogo 18</h3>
+                        <div class="game-meta">
+                            <span class="game-genre">Survival</span>
+                            <span class="game-rating"><i class="fas fa-star"></i> 4.3</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="game-card">
+                    <div class="game-image">
+                        <img src="jogo19-logo.png" alt="Jogo 19" class="game-logo">
+                        <button class="favorite-btn"><i class="far fa-heart"></i></button>
+                    </div>
+                    <div class="game-info">
+                        <h3 class="game-title">Jogo 19</h3>
+                        <div class="game-meta">
+                            <span class="game-genre">Point & Click</span>
+                            <span class="game-rating"><i class="fas fa-star"></i> 4.8</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="game-card">
+                    <div class="game-image">
+                        <img src="jogo20-logo.png" alt="Jogo 20" class="game-logo">
+                        <button class="favorite-btn"><i class="far fa-heart"></i></button>
+                    </div>
+                    <div class="game-info">
+                        <h3 class="game-title">Jogo 20</h3>
+                        <div class="game-meta">
+                            <span class="game-genre">Beat 'em up</span>
+                            <span class="game-rating"><i class="fas fa-star"></i> 4.5</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Jogos 21-25 -->
+                <div class="game-card">
+                    <div class="game-image">
+                        <img src="jogo21-logo.png" alt="Jogo 21" class="game-logo">
+                        <button class="favorite-btn"><i class="far fa-heart"></i></button>
+                    </div>
+                    <div class="game-info">
+                        <h3 class="game-title">Jogo 21</h3>
+                        <div class="game-meta">
+                            <span class="game-genre">Rhythm</span>
+                            <span class="game-rating"><i class="fas fa-star"></i> 4.9</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="game-card">
+                    <div class="game-image">
+                        <img src="jogo22-logo.png" alt="Jogo 22" class="game-logo">
+                        <button class="favorite-btn"><i class="far fa-heart"></i></button>
+                    </div>
+                    <div class="game-info">
+                        <h3 class="game-title">Jogo 22</h3>
+                        <div class="game-meta">
+                            <span class="game-genre">Stealth</span>
+                            <span class="game-rating"><i class="fas fa-star"></i> 4.4</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="game-card">
+                    <div class="game-image">
+                        <img src="jogo23-logo.png" alt="Jogo 23" class="game-logo">
+                        <button class="favorite-btn"><i class="far fa-heart"></i></button>
+                    </div>
+                    <div class="game-info">
+                        <h3 class="game-title">Jogo 23</h3>
+                        <div class="game-meta">
+                            <span class="game-genre">Tower Defense</span>
+                            <span class="game-rating"><i class="fas fa-star"></i> 4.7</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="game-card">
+                    <div class="game-image">
+                        <img src="jogo24-logo.png" alt="Jogo 24" class="game-logo">
+                        <button class="favorite-btn"><i class="far fa-heart"></i></button>
+                    </div>
+                    <div class="game-info">
+                        <h3 class="game-title">Jogo 24</h3>
+                        <div class="game-meta">
+                            <span class="game-genre">Sandbox</span>
+                            <span class="game-rating"><i class="fas fa-star"></i> 4.6</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="game-card">
+                    <div class="game-image">
+                        <img src="jogo25-logo.png" alt="Jogo 25" class="game-logo">
+                        <button class="favorite-btn"><i class="far fa-heart"></i></button>
+                    </div>
+                    <div class="game-info">
+                        <h3 class="game-title">Jogo 25</h3>
+                        <div class="game-meta">
+                            <span class="game-genre">MOBA</span>
+                            <span class="game-rating"><i class="fas fa-star"></i> 4.8</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Jogos 26-30 -->
+                <div class="game-card">
+                    <div class="game-image">
+                        <img src="jogo26-logo.png" alt="Jogo 26" class="game-logo">
+                        <button class="favorite-btn"><i class="far fa-heart"></i></button>
+                    </div>
+                    <div class="game-info">
+                        <h3 class="game-title">Jogo 26</h3>
+                        <div class="game-meta">
+                            <span class="game-genre">Battle Royale</span>
+                            <span class="game-rating"><i class="fas fa-star"></i> 4.5</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="game-card">
+                    <div class="game-image">
+                        <img src="jogo27-logo.png" alt="Jogo 27" class="game-logo">
+                        <button class="favorite-btn"><i class="far fa-heart"></i></button>
+                    </div>
+                    <div class="game-info">
+                        <h3 class="game-title">Jogo 27</h3>
+                        <div class="game-meta">
+                            <span class="game-genre">Plataforma 2D</span>
+                            <span class="game-rating"><i class="fas fa-star"></i> 4.9</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="game-card">
+                    <div class="game-image">
+                        <img src="jogo28-logo.png" alt="Jogo 28" class="game-logo">
+                        <button class="favorite-btn"><i class="far fa-heart"></i></button>
+                    </div>
+                    <div class="game-info">
+                        <h3 class="game-title">Jogo 28</h3>
+                        <div class="game-meta">
+                            <span class="game-genre">Hack & Slash</span>
+                            <span class="game-rating"><i class="fas fa-star"></i> 4.7</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="game-card">
+                    <div class="game-image">
+                        <img src="jogo29-logo.png" alt="Jogo 29" class="game-logo">
+                        <button class="favorite-btn"><i class="far fa-heart"></i></button>
+                    </div>
+                    <div class="game-info">
+                        <h3 class="game-title">Jogo 29</h3>
+                        <div class="game-meta">
+                            <span class="game-genre">Esportes</span>
+                            <span class="game-rating"><i class="fas fa-star"></i> 4.4</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="game-card">
+                    <div class="game-image">
+                        <img src="jogo30-logo.png" alt="Jogo 30" class="game-logo">
+                        <button class="favorite-btn"><i class="far fa-heart"></i></button>
+                    </div>
+                    <div class="game-info">
+                        <h3 class="game-title">Jogo 30</h3>
+                        <div class="game-meta">
+                            <span class="game-genre">Multiplayer</span>
+                            <span class="game-rating"><i class="fas fa-star"></i> 4.8</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="Catalogo.js"></script>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!-- ============================================
+     ARQUIVO: index.html
+     PROJETO: Velora - Plataforma de Games Indies
+     ============================================ -->
+
+     <!DOCTYPE html>
+     <html lang="pt-BR">
+     <head>
+         <meta charset="UTF-8">
+         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <title>Suporte - Velora</title>
+         <link rel="stylesheet" href="SuporteUsuario.css">
+     </head>
+     <body>
+         <!-- Decoração de fundo -->
+         <div class="background-decoration"></div>
+         <div class="circle-decoration"></div>
+         
+         <div class="container">
+             <!-- LOGO VELORA - Substitua o texto pela sua logo -->
+             <div class="logo-container">
+                 <!-- Você pode adicionar uma tag <img> aqui com sua logo:
+                      <img src="caminho/para/logo-velora.png" alt="Velora Logo" class="logo-image">
+                      
+                      Ou manter o texto estilizado abaixo: -->
+                 <h1 class="logo-text">VELORA</h1>
+                 <p class="logo-subtitle">Valorizando Games Indies Brasileiros</p>
+             </div>
+             
+             <h2 class="main-title">Central de Suporte</h2>
+             
+             <!-- Barra de pesquisa -->
+             <div class="search-container">
+                 <input 
+                     type="text" 
+                     class="search-box" 
+                     placeholder="Como podemos ajudar você?"
+                     id="searchInput"
+                 >
+                 <button class="search-button" id="searchButton">
+                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                         <circle cx="11" cy="11" r="8"></circle>
+                         <path d="m21 21-4.35-4.35"></path>
+                     </svg>
+                 </button>
+             </div>
+             
+             <h3 class="section-title">Procurar ajuda por categoria</h3>
+             
+             <!-- Grid de categorias -->
+             <div class="categories-grid">
+                 <div class="category-card" data-category="conta">
+                     <div class="icon">
+                         <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                             <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                             <circle cx="12" cy="7" r="4"></circle>
+                             <path d="M22 11c0 .34-.02.67-.06 1"></path>
+                         </svg>
+                     </div>
+                     <h4 class="category-title">Conta e Segurança</h4>
+                     <p class="category-description">Login, senha, verificação de perfil</p>
+                 </div>
+                 
+                 <div class="category-card" data-category="desenvolvedores">
+                     <div class="icon">
+                         <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                             <polyline points="16 18 22 12 16 6"></polyline>
+                             <polyline points="8 6 2 12 8 18"></polyline>
+                         </svg>
+                     </div>
+                     <h4 class="category-title">Para Desenvolvedores</h4>
+                     <p class="category-description">Cadastro de jogos, portfólio, perfil</p>
+                 </div>
+                 
+                 <div class="category-card" data-category="apoio">
+                     <div class="icon">
+                         <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                             <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                         </svg>
+                     </div>
+                     <h4 class="category-title">Apoio e Doações</h4>
+                     <p class="category-description">Como apoiar jogos, pagamentos</p>
+                 </div>
+                 
+                 <div class="category-card" data-category="catalogo">
+                     <div class="icon">
+                         <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                             <rect x="2" y="7" width="20" height="15" rx="2" ry="2"></rect>
+                             <polyline points="17 2 12 7 7 2"></polyline>
+                         </svg>
+                     </div>
+                     <h4 class="category-title">Catálogo de Jogos</h4>
+                     <p class="category-description">Busca, filtros, avaliações</p>
+                 </div>
+                 
+                 <div class="category-card" data-category="comunidade">
+                     <div class="icon">
+                         <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                             <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                             <circle cx="9" cy="7" r="4"></circle>
+                             <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                             <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                         </svg>
+                     </div>
+                     <h4 class="category-title">Comunidade</h4>
+                     <p class="category-description">Comentários, feedbacks, moderação</p>
+                 </div>
+                 
+                 <div class="category-card" data-category="problemas">
+                     <div class="icon">
+                         <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                             <circle cx="12" cy="12" r="10"></circle>
+                             <line x1="12" y1="8" x2="12" y2="12"></line>
+                             <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                         </svg>
+                     </div>
+                     <h4 class="category-title">Problemas Técnicos</h4>
+                     <p class="category-description">Erros, bugs, compatibilidade</p>
+                 </div>
+             </div>
+             
+             <!-- Seção de contato rápido -->
+             <div class="quick-contact">
+                 <h3>Não encontrou o que procura?</h3>
+                 <p>Entre em contato diretamente com nossa equipe</p>
+                 <button class="contact-button">Falar com Suporte</button>
+             </div>
+         </div>
+         
+         <script src="SuporteUsuario.js"></script>
+     </body>
+     </html>
